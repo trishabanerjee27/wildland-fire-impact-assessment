@@ -6,25 +6,6 @@ __pycache__/
 # C extensions
 *.so
 
-# Ignore everything in the data folder
-data/**
-
-# Allow raw and derived folders inside data
-!data/raw/
-!data/derived/
-
-# Allow specific files in data/derived
-!data/derived/aqi_estimate_v1.csv
-!data/derived/average_aqi_data_by_year_v3.csv
-!data/derived/raw_aqi_data_v7.csv
-!data/derived/xml_to_csv.xlsx
-
-# Allow .gitkeep to keep the raw folder structure
-!data/raw/.gitkeep
-
-# Ignore all other files in data/raw
-data/raw/**
-
 # Distribution / packaging
 .Python
 build/
@@ -32,6 +13,7 @@ develop-eggs/
 dist/
 downloads/
 eggs/
+data/
 .eggs/
 lib/
 lib64/
