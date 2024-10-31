@@ -58,10 +58,9 @@ The primary goal of this project is to predict the impact of wildfires on urban 
 2. **Data Processing**:
    - **Filtering and Grouping**: The fire and AQI datasets are filtered by year and parameter (e.g., CO, NO2, PM2.5) for yearly aggregation. Data processing includes calculating mean AQI values and normalizing pollutants to create a comprehensive AQI estimate.
    - **Smoke Estimate Calculation**:
- Based on the formula:
-    Smoke Estimate = (GIS Acres) / (Distance from City)^2 * Fire Type Weight
-
-where:
+     Based on the formula:
+     Smoke Estimate = (GIS Acres) / (Distance from City)^2 * Fire Type Weight
+     where:
   - **GIS Acres** is the area of the fire in acres.
   - **Distance from City** is the distance of the fire from the city in miles.
   - **Fire Type Weight** is a weight assigned based on the type of fire, using a predefined dictionary called `fire_type_weights`. If a specific fire type does not have a weight in the dictionary, a default weight of 0.5 is applied.
