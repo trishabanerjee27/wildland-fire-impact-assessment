@@ -57,11 +57,18 @@ The primary goal of this project is to predict the impact of wildfires on urban 
 
 2. **Data Processing**:
    - **Filtering and Grouping**: The fire and AQI datasets are filtered by year and parameter (e.g., CO, NO2, PM2.5) for yearly aggregation. Data processing includes calculating mean AQI values and normalizing pollutants to create a comprehensive AQI estimate.
-   - **Smoke Estimate Calculation**: Based on the formula: 
-     \[
-     \text{Smoke Estimate} = \frac{\text{GIS Acres}}{(\text{Distance from City})^2} \times \text{Fire Type Weight}
-     \]
-     where `Fire Type Weight` is assigned based on the type of fire, using a weight dictionary `fire_type_weights`. This formula calculates the smoke impact for each fire based on its size and distance from the city, with adjustments for proximity weighting.
+   - **Smoke Estimate Calculation**:
+ Based on the formula:
+
+  \[
+  \text{Smoke Estimate} = \frac{\text{GIS Acres}}{(\text{Distance from City})^2} \times \text{Fire Type Weight}
+  \]
+where:
+  - **GIS Acres** is the area of the fire in acres.
+  - **Distance from City** is the distance of the fire from the city in miles.
+  - **Fire Type Weight** is a weight assigned based on the type of fire, using a predefined dictionary called `fire_type_weights`. If a specific fire type does not have a weight in the dictionary, a default weight of 0.5 is applied.
+
+  This formula calculates the smoke impact for each fire based on its size and distance from the city, with adjustments for proximity weighting.
 
 3. **Modeling**:
    - **SARIMA**: A Seasonal ARIMA model was used to forecast smoke estimates up to 2050, capturing any cyclical or trend behavior in the data.
