@@ -45,6 +45,47 @@ wildland-fire-impact-assessment
 - **`LICENSE`**: License for the repository.
 - **`README.md`**: This file, providing a detailed overview of the project.
 
+### Data Description for Intermediate Files in `data/derived/`
+
+- **`aqi_estimate_v1.csv`**  
+  Contains the first iteration of AQI data estimates derived from the EPA API using Syracuse's Onondaga County as a filter. This file was used to analyze the annual air quality trend but does not cover the full set of parameters across all years. 
+
+- **`average_aqi_data_by_year.csv`**  
+  Stores the annual average AQI values for all monitored pollutants, reshaped to present each pollutant as a separate column. Data was processed using the EPA API responses, with missing data interpolated for a smooth analysis of air quality trends.
+
+- **`average_aqi_data_by_year_v2.csv`**  
+  An enhanced version of the annual average AQI data using a refined bounding box around Syracuse, NY. This version corrects gaps in the original dataset by expanding the spatial bounds.
+
+- **`average_aqi_data_by_year_v3.csv`**  
+  The most complete version of the annual average AQI data. This file includes AQI parameters for all pollutants across the study period by adjusting the bounding box to 100 miles, ensuring more comprehensive coverage.
+
+- **`fire_db_milesfiltered.csv`**  
+  Contains geospatial fire data filtered to include only fires within 650 miles of Syracuse, NY, and between 1961 and 2021. This file was processed to calculate annual smoke estimates.
+
+- **`raw_aqi_data.csv`**  
+  Raw AQI data fetched from the EPA API for Onondaga County. This file contains pollutant-specific daily AQI values and is the basis for generating yearly averages.
+
+- **`raw_aqi_data_v2.csv`**  
+  Raw AQI data using a bounding box of 50 miles around Syracuse, NY. Includes updated parameters but still lacks full coverage for the study period.
+
+- **`raw_aqi_data_v3.csv`**  
+  Refined raw AQI data with an expanded bounding box to 100 miles. Addresses gaps identified in previous iterations.
+
+- **`raw_aqi_data_v4.csv`**  
+  Final iteration of raw AQI data for bounding box adjustments. This dataset provides the most comprehensive pollutant data and serves as the primary input for calculating air quality metrics.
+
+- **`raw_aqi_data_v5.csv`**  
+  Represents the finalized bounding box adjustment for AQI data, containing data across all parameters from 1961 to 2021. This version aggregates the pollutant data across spatial bounds effectively.
+
+- **`yearly_smoke_estimate.csv`**  
+  A file summarizing annual smoke exposure estimates based on fire size, distance, and type. This file was generated from `fire_db_milesfiltered.csv` by applying a custom smoke estimation formula.
+
+- **`xml_to_csv.xlsx`**  
+  An intermediary file containing converted XML data to CSV for further processing. It might include metadata or initial transformation steps before final aggregation.
+
+These files were processed iteratively to ensure completeness and accuracy, adjusting bounding boxes and filtering criteria to align with the project's objectives.
+
+
 ## Project Overview
 
 ### Objectives
