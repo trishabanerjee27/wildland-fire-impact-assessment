@@ -279,6 +279,7 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ### Data Sources
 - [New York State Vital Statistics](http://www.health.ny.gov/statistics/vital_statistics/)
 - [USGS Combined Wildland Fire Dataset](https://doi.org/10.5066/P9ZXGFY3)
+- [EPA AQS Data Mart](https://aqs.epa.gov/data/api)
 
 ### Contributors
 - **Trisha Banerjee**
