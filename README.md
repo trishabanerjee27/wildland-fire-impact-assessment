@@ -72,19 +72,19 @@ The primary goal of this project is to predict the impact of wildfires on urban 
        ```
        Smoke Estimate = (GIS Acres) / (Distance from City^2 if Distance > 0 else 1) * Fire Type Weight
        ```
-##### Components of the Formula:
-   1. **GIS Acres**:
-      - Represents the burned area of the fire in acres.
-   
-   2. **Distance from City**:
-      - Represents the distance of the fire from the city in miles.
-      - The formula divides the fire’s burned area by the square of its distance from the city (`Distance^2`) if the distance is greater than 0. For cases where the distance is 0 or missing, the denominator defaults to 1 to avoid division by zero.
-   
-   3. **Fire Type Weight**:
-      - A weight assigned to the fire type using a predefined dictionary (`fire_type_weights`) based on the fire's characteristics.
-      - If a specific fire type is not found in the dictionary, a default weight of 0.5 is applied.
-   
-   This formula adjusts the smoke estimate by scaling the fire’s burned area with its distance from the city, reducing the impact of fires farther away. Additionally, the fire type weight fine-tunes the estimate based on the fire's characteristics.
+       ##### Components of the Formula:
+     1. **GIS Acres**:
+        - Represents the burned area of the fire in acres.
+     
+     2. **Distance from City**:
+        - Represents the distance of the fire from the city in miles.
+        - The formula divides the fire’s burned area by the square of its distance from the city (`Distance^2`) if the distance is greater than 0. For cases where the distance is 0 or missing, the denominator defaults to 1 to avoid division by zero.
+     
+     3. **Fire Type Weight**:
+        - A weight assigned to the fire type using a predefined dictionary (`fire_type_weights`) based on the fire's characteristics.
+        - If a specific fire type is not found in the dictionary, a default weight of 0.5 is applied.
+     
+     This formula adjusts the smoke estimate by scaling the fire’s burned area with its distance from the city, reducing the impact of fires farther away. Additionally, the fire type weight fine-tunes the estimate based on the fire's characteristics.
 
 
 3. **Modeling**:
